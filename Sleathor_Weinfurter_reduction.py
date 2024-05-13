@@ -13,11 +13,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from qat.lang.AQASM import *
 from qat.qpus import get_default_qpu
-import numpy as np
 from itertools import product
 from scipy.linalg import sqrtm
 
-# Must create all the possible states for 2 qubits
+# Must create all the possible states for 2 bits
 # like creating_2n_states(2) will return [[0,0],[0,1],[1,0],[1,1]]
 def creating_2n_states(n):
     return list(product([0, 1], repeat=n))
