@@ -6,7 +6,9 @@
 # and theta2. That will give us the unitary matrix X.
 # We will use the formula : 
 # U = exp(i*alpha) * Rz(theta2) * Ry(theta1) * Rz(theta0)
-# We will brute force the values. (Yes, It's not elegant, but it's fast)
+#
+# We will brute force the values. (Yes, It's not elegant, but I find
+# it faster than trying to solve the equation with a pen and paper.)
 
 ######################################################################
 
@@ -21,9 +23,7 @@ import cmath
 
 # The First question asks us to find an ABC decomposition to find the unitary 
 # matrix X. We could find it with a pen and paper...
-# But let's do it with python. Because If I take less than 15 minutes to write
-# the code, it will be faster than doing it by hand.
-
+# But let's do it with python.
 
 ## It's always nice to have a function that converts the values to pi.
 # It will be useful for the output.
@@ -91,4 +91,3 @@ for val in res :
 print("----------------------------------")
 print("Number of solutions found : ", len(res))
 print("That's all folks !")
-# Yep, was worth it. We found the values of alpha, theta0, theta1 and theta2

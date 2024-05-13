@@ -2,7 +2,10 @@
 
 # Lapu Matthias 
 
-# TODO WRITE THE GOAL
+# Our goal is to create a circuit that will apply the X gate
+# using the ABC decomposition.
+# To build the X gate we will use rotation gates, and the formula :
+# U = exp(i*alpha) * Rz(theta2) * Ry(theta1) * Rz(theta0)
 
 ######################################################################
 
@@ -15,7 +18,7 @@ import numpy as np
 from math import *
 import cmath
 
-# We had 12 values in to choose from : 
+# We had 12 values to choose from : 
 # Let's take : 
 # alpha = π/2
 # theta2 = 0 

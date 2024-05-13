@@ -2,7 +2,8 @@
 
 # Lapu Matthias 
 
-# TODO WRITE THE GOAL
+# The goal is to create a controlled gate that will apply the X gate 
+# using the ABC decomposition.
 
 ######################################################################
 
@@ -19,6 +20,9 @@ def Phase_generator(theta):
     [0, np.exp(1j * theta)]])
 
 
+## This function will build the circuit that applies the ABC decomposition
+# with the values we chose. It will normally output a controlled X gate.
+# Reminder : a controlled gate works like a if then else statement.
 def X_controlled_gate(alpha,theta2,theta1,theta0,qbit_to_1=False):
 
     GlobalPhase = AbstractGate("Phase", [float], arity=1, 
@@ -27,8 +31,8 @@ def X_controlled_gate(alpha,theta2,theta1,theta0,qbit_to_1=False):
     prog = Program()
     qbits = prog.qalloc(2)
 
-    # If we want to test if the control works, we can change the value of the first qbit
-    # before the circuit.
+    # If we want to test if the control works, 
+    # we can change the value of the first qbit before the circuit.
     if qbit_to_1:
         prog.apply(X, qbits[0])
 
@@ -44,10 +48,8 @@ def X_controlled_gate(alpha,theta2,theta1,theta0,qbit_to_1=False):
     prog.apply(RZ((-theta0-theta2)/2), qbits[1])
     prog.apply(RY(-theta1/2), qbits[1])
 
-
     # Then the CNOT
     prog.apply(CNOT,qbits[0], qbits[1])
-
 
     # We put the Rz rotation on the second qbit
     prog.apply(GlobalPhase(alpha), qbits[0])
@@ -55,7 +57,6 @@ def X_controlled_gate(alpha,theta2,theta1,theta0,qbit_to_1=False):
     # We put A on the first qbit
     prog.apply(RY(theta1/2), qbits[1])
     prog.apply(RZ(theta2), qbits[1])
-
 
     # Running the circuit
     circuit = prog.to_circ()
@@ -65,7 +66,7 @@ def X_controlled_gate(alpha,theta2,theta1,theta0,qbit_to_1=False):
 
     linalgqpu = PyLinalg()
 
-    # printing the result
+    # printing the result and showing the probabilities
     result = linalgqpu.submit(job)
     l = len(result)
     states = ['']*l
