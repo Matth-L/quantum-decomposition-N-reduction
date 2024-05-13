@@ -1,20 +1,18 @@
+######################################################################
+
+# Lapu Matthias 
+
+# TODO WRITE THE GOAL
+
+######################################################################
+
+import numpy as np
+from math import *
+import matplotlib.pyplot as plt
 from qat.lang.AQASM import *
 from qat.qpus import PyLinalg
 from qat.lang.AQASM import AbstractGate
-import matplotlib.pyplot as plt
-import numpy as np
-from math import *
-import cmath
 
-## We define the Ry and Rz matrices as functions of the angle theta.
-# 
-def Ry_matrix(theta): 
-    return np.array([[cos(theta/2), -sin(theta/2)], 
-                     [sin(theta/2), cos(theta/2)]])
-
-def Rz_matrix(theta):
-    return np.array([[cmath.exp(-1j*theta/2), 0], 
-                     [0, cmath.exp(1j*theta/2)]])
 
 def Phase_generator(theta):
     return np.array([[np.exp(1j * theta), 0],

@@ -1,3 +1,12 @@
+######################################################################
+
+# Lapu Matthias 
+
+# TODO WRITE THE GOAL
+
+######################################################################
+
+
 from qat.lang.AQASM import *
 from qat.qpus import PyLinalg
 from qat.lang.AQASM import AbstractGate
