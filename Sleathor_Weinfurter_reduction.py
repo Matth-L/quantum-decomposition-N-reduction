@@ -78,7 +78,7 @@ def Sleathor_Weinfurter_2qubits_X(mat,mat_dagger,state):
 
     # Running the circuit
     circuit = prog.to_circ()
-    # circuit.display()
+    circuit.display()
 
     mypylinalgqpu = get_default_qpu()
 
@@ -154,7 +154,7 @@ def Sleathor_Weinfurter_3qubits_X(mat,mat_dagger,state):
 
     # Running the circuit
     circuit = prog.to_circ()
-    # circuit.display()
+    circuit.display()
 
     mypylinalgqpu = get_default_qpu()
 
@@ -239,7 +239,6 @@ def main():
         print("Testing the X fourth gate with the state : ",state)
         testing_X_sq2_sq4(state,4)
         # looks ok
-
     print("-------------------------------------------------")
     
     # Testing the Sleathor Weinfurter reduction with 2 qubits

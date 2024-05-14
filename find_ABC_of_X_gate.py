@@ -12,36 +12,30 @@
 
 ######################################################################
 
-from qat.lang.AQASM import *
-from qat.qpus import PyLinalg
-from qat.lang.AQASM import AbstractGate
-import matplotlib.pyplot as plt
-import numpy as np
 from math import *
-import numpy as np
 import cmath
+import numpy as np
 
 # The First question asks us to find an ABC decomposition to find the unitary 
-# matrix X. We could find it with a pen and paper...
-# But let's do it with python.
+# matrix X. 
 
 ## It's always nice to have a function that converts the values to pi.
-# It will be useful for the output.
+# it's just pretty printing.
 def convert_to_pi(value):
     if np.isclose(value, 0):
         return "0"
     elif np.isclose(value, np.pi/4):
-        return "π/4"
+        return "pi/4"
     elif np.isclose(value, np.pi/2):
-        return "π/2"
+        return "pi/2"
     elif np.isclose(value, np.pi):
-        return "π"
+        return "pi"
     elif np.isclose(value, -np.pi/4):
-        return "-π/4"
+        return "-pi/4"
     elif np.isclose(value, -np.pi/2):
-        return "-π/2"
+        return "-pi/2"
     elif np.isclose(value, -np.pi):
-        return "-π"
+        return "-pi"
     else:
         return str(value)
         
@@ -66,9 +60,10 @@ def U(alpha,theta2,theta1,theta0):
 
 ## We can now find the values of alpha, theta0, theta1 and theta2
 # that will give us the X matrix. Yes, we will brute force it.
-# number of iterations : 7^4 = 2401, takes less than a second to compute.
+# Yes it's O(n^4), but there's only 11 values to check.
 def find_X_matrix():
-    range_values = [0, pi/2, pi, pi/4, -pi/2, -pi, -pi/4]
+    range_values = [0, pi/2, pi, pi/3, pi/4, pi/6, 
+                    -pi/2, -pi, -pi/3, -pi/4, -pi/6]
     result = []
     for i in range_values: #alpha
         for j in range_values: #theta2
@@ -90,4 +85,5 @@ for val in res :
 
 print("----------------------------------")
 print("Number of solutions found : ", len(res))
-print("That's all folks !")
+print("----------------------------------")
+print("Number of iterations : ", 11**4)
