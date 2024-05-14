@@ -9,20 +9,20 @@ and the Sleathor-Whitney reduction
 The ABC decomposition states that any 1 qubits gate can be decomposed as such:
 
 $$
-U & = e^{i\alpha}A*X*B*X*C
+U = e^{i\alpha}A*X*B*X*C
 $$
 
 This can also be written as:
 
 $$
-U & = e^{i\alpha}R_z(\theta_2)R_y(\theta_1)R_z(\theta_0)
+U  = e^{i\alpha}R_z(\theta_2)R_y(\theta_1)R_z(\theta_0)
 $$
 where 
 
 $$
-A & = R_y(\frac{\pi}{2}) \\
-B & = R_y(\frac{-\pi}{2})R_z(\frac{-\pi}{2}) \\
-C & = R_z(\frac{\pi}{2})
+A  = R_y(\frac{\pi}{2}) \\
+B  = R_y(\frac{-\pi}{2})R_z(\frac{-\pi}{2}) \\
+C  = R_z(\frac{\pi}{2})
 $$
 
 The first part of this projet was to find the rotation angles for the X gate.
