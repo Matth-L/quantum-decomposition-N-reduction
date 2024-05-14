@@ -1,10 +1,9 @@
-# Introduction to quantum computing
-## Implementation of the ABC decomposition and the Sleathor-Whitney reduction
+# Introduction to quantum computing : Implementation of the ABC decomposition and the Sleathor-Whitney reduction
 
 This is a school-project that aims to implement the ABC decomposition 
 and the Sleathor-Whitney reduction
 
-### ABC decomposition
+## ABC decomposition
 
 The ABC decomposition states that any 1 qubits gate can be decomposed as such:
 
@@ -32,7 +31,7 @@ to prove that the decomposition is correct.
 
 ![ABC_decomposition](img/abc_decomposition.png)
 
-### Sleathor-Whitney reduction
+## Sleathor-Whitney reduction
 
 The Sleathor-Whitney reduction states that any controlled unitary gate can 
 be written, using only CNOT gates and V. (V being an unitary gate that is the square of U.)
