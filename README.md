@@ -20,9 +20,9 @@ $$
 where 
 
 $$
-A  = R_y(\frac{\pi}{2}) ;
-B  = R_y(\frac{-\pi}{2})R_z(\frac{-\pi}{2}) ;
-C  = R_z(\frac{\pi}{2})
+    A = R_z(\theta_2)R_y(\frac{\theta_1}{2}) \\
+    B = R_y(\frac{-\theta_1}{2})R_z(\frac{-\theta_0-\theta_2}{2}) \\
+    C = R_z(\frac{\theta_0-\theta_2}{2})
 $$
 
 The first part of this projet was to find the rotation angles for the X gate.
