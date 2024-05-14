@@ -29,9 +29,8 @@ The first part of this projet was to find the rotation angles for the X gate.
 Then we add to build the quantum circuit that implements the ABC decomposition,
 to prove that the decomposition is correct.
 
-<p align="center">
 ![ABC_decomposition](img/abc_decomposition.png)
-</p>
+
 ## Sleathor-Whitney reduction
 
 The Sleathor-Whitney reduction states that any controlled unitary gate can 
@@ -47,9 +46,7 @@ the bottom right corner and the identity matrix are located on the top left.
 From there, the controlled CNOT can be implemented by using CNOT gates and 
 expanding the matrix.
 
-<p align="center">
 ![Controlled_gate](img/controlled_gate.png)
-</p>
 
 
 
